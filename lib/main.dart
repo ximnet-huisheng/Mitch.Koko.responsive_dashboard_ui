@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashboard_ui/responsive/desktop_scaffold.dart';
+import 'package:responsive_dashboard_ui/responsive/mobile_scaffold.dart';
+import 'package:responsive_dashboard_ui/responsive/responsive_layout.dart';
+import 'package:responsive_dashboard_ui/responsive/tablet_scaffold.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: ResponsiveLayout(
+        mobileScaffold: MobileScaffold(),
+        tabletScaffold: TabletScaffold(),
+        desktopScaffold: DesktopScaffold(),
+      ),
     );
   }
 }
